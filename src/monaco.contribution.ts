@@ -45,6 +45,7 @@ import './rust/rust.contribution';
 import './sb/sb.contribution';
 import './scss/scss.contribution';
 import './sophia/sophia.contribution';
+import './soul/soul.contribution';
 import './solidity/solidity.contribution';
 import './sql/sql.contribution';
 import './st/st.contribution';
