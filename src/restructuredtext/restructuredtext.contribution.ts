@@ -7,8 +7,8 @@
 import { registerLanguage } from '../_.contribution';
 
 registerLanguage({
-	id: 'r',
-	extensions: ['.r', '.rhistory', '.rmd', '.rprofile', '.rt'],
-	aliases: ['R', 'r'],
-	loader: () => import('./r')
+	id: 'restructuredtext',
+	extensions: ['.rst'],
+	aliases: ['reStructuredText', 'restructuredtext'],
+	loader: () => import('./restructuredtext')
 });

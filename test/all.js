@@ -1,5 +1,7 @@
-var requirejs = require("requirejs");
-var jsdom = require('jsdom');
+const requirejs = require("requirejs");
+const jsdom = require('jsdom');
+const glob = require('glob');
+const path = require('path');
 
 requirejs.config({
 	baseUrl: '',
@@ -11,14 +13,25 @@ requirejs.config({
 	nodeRequire: require
 });
 
-let tmp = new jsdom.JSDOM('<!DOCTYPE html><html><body></body></html>');
+const tmp = new jsdom.JSDOM('<!DOCTYPE html><html><body></body></html>');
 global.document = tmp.window.document;
 global.navigator = tmp.window.navigator;
 global.self = global;
 global.document.queryCommandSupported = function () { return false; };
-global.window = { location: {} };
+global.window = { location: {}, navigator: tmp.window.navigator };
 
 requirejs(['./test/setup'], function () {
+	glob('release/dev/*/*.test.js', { cwd: path.dirname(__dirname) }, function (err, files) {
+		if (err) {
+			console.log(err);
+			return;
+		}
+		requirejs(files.map(f => f.replace(/\.js$/, '')), function () {
+			// We can launch the tests!
+		}, function (err) {
+			console.log(err);
+		})
+	});
 }, function (err) {
 	console.log(err);
 });

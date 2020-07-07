@@ -4,59 +4,6 @@ Colorization and configuration supports for multiple languages for the Monaco Ed
 
 ![monaco-languages](https://cloud.githubusercontent.com/assets/5047891/15938606/1fd4bac6-2e74-11e6-8839-d455da8bc8a7.gif)
 
-* abap
-* apex
-* azcli
-* bat
-* clojure
-* coffee script
-* cpp
-* csharp
-* csp
-* dockerfile
-* fsharp
-* go
-* graphql
-* handlebars
-* html
-* ini
-* java
-* javascript
-* lua
-* markdown
-* msdax
-* mysql
-* objective-c
-* pascal
-* pascaligo
-* pgsql
-* php
-* postiats
-* powershell
-* pug
-* python
-* r
-* razor
-* ruby
-* rust
-* small basic
-* scheme
-* solidity
-* sql
-* st
-* swift
-* twig
-* typescript
-* vb
-* xml
-* yaml
-
-Also `css` dialects:
-
-* css
-* less
-* scss
-
 ## Issues
 
 Please file issues concerning `monaco-languages` in the [`monaco-editor`-repository](https://github.com/Microsoft/monaco-editor/issues).
@@ -77,18 +24,9 @@ This npm module is bundled and distributed in the [monaco-editor](https://www.np
 * create `$/src/myLang/myLang.contribution.ts`
 * create `$/src/myLang/myLang.ts`
 * create `$/src/myLang/myLang.test.ts`
-* restart compilation with `$> npm run watch`
 * edit `$/src/monaco.contribution.ts` and register your new language
 ```js
   import './myLang/myLang.contribution';
-```
-* edit `$/test/setup.js` and load your new language while testing
-```js
-  'release/dev/myLang/myLang.test',
-```
-* edit `$/scripts/bundle.js` and ship your new language
-```js
-  bundleOne('myLang/myLang');
 ```
 
 ## Code of Conduct

@@ -4,11 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 'use strict';
 
-import { registerLanguage } from '../_.contribution';
+import {registerLanguage} from '../_.contribution';
 
 registerLanguage({
-	id: 'r',
-	extensions: ['.r', '.rhistory', '.rmd', '.rprofile', '.rt'],
-	aliases: ['R', 'r'],
-	loader: () => import('./r')
+	id: 'julia',
+	extensions: ['.jl'],
+	aliases: ['julia', 'Julia'],
+	loader: () => import('./julia')
 });
