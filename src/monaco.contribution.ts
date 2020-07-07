@@ -67,3 +67,4 @@ import './typescript/typescript.contribution';
 import './vb/vb.contribution';
 import './xml/xml.contribution';
 import './yaml/yaml.contribution';
+import './soul/soul.contribution';
